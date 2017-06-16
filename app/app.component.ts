@@ -25,7 +25,7 @@ export class AppComponent implements OnInit { // Export a class AppComponent
         }
      
     
-        selectedCartoon = {"name":"Angelina Pickles", "DOB":"29-12-1993", "email": "angie@email.com"}; //Assign a default value to the variable selectedCartoon
+        selectedCartoon = {}; //Assign a default value to the variable selectedCartoon
         onChange(newValue) {// On change of the dropdown option, a newValue is taken in as the parameter
         this.selectedCartoon = newValue;//the selectedCartoon is assigned the new value
         return this.selectedCartoon;// selectedCartoon is returned

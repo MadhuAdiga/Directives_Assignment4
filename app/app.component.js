@@ -14,7 +14,7 @@ var AppComponent = (function () {
     function AppComponent(_appServives) {
         this._appServives = _appServives;
         this.cartoons = [{}]; //Declare an array of objects
-        this.selectedCartoon = { "name": "Angelina Pickles", "DOB": "29-12-1993", "email": "angie@email.com" }; //Assign a default value to the variable selectedCartoon
+        this.selectedCartoon = {}; //Assign a default value to the variable selectedCartoon
     } //Declare a private variable of the type AppServices
     AppComponent.prototype.ngOnInit = function () {
         this.cartoons = this._appServives.getData(); //Run OnInit which assigns the variable to the data fetched by the getData function of the AppServices

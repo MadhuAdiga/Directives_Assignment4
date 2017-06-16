@@ -8,7 +8,7 @@
             </select>
     </form><br>
 
-    <table class="table table-bordered"> <!-- Display the bootstrap table  --> 
+    <table *ngIf="selectedCartoon.name" class="table table-bordered"> <!-- Display the bootstrap table  --> 
     <thead>
         <tr [ngClass]="{classTableHead:true}"> <!-- Assign an attribute directive ngClass to the table head --> 
             <th>Name</th>
