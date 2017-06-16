@@ -1,0 +1,30 @@
+<div class="container container-fluid">
+    <h2>OnChange</h2><br>
+
+    <form #myForm="ngForm"><!-- Bind the form object to ngForm -->
+        <label> Please select a cartoon: </label>
+            <select (ngModelChange)="onChange($event)" name="ngForm.first" ngModel required #first="ngModel"> <!--Create a select object whose select option would be an ngModel and on select would trigger an onChange function -->
+                <option [ngValue]="i" *ngFor="let i of cartoons">{{i.name}}</option><!-- Iterate through the array of cartoons and display the name -->
+            </select>
+    </form><br>
+
+    <table class="table table-bordered"> <!-- Display the bootstrap table  --> 
+    <thead>
+        <tr [ngClass]="{classTableHead:true}"> <!-- Assign an attribute directive ngClass to the table head --> 
+            <th>Name</th>
+            <th>DOB</th>
+            <th>Email</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cartoon of cartoons" [ngClass]="{classTableBody:true}"> <!-- Loop through the array of cartoons and display each value as table row. Assign an attribute directive ngClass to the table body -->  
+            <td *ngIf="cartoon.name==selectedCartoon.name">{{cartoon.name}}</td><!-- Display the cell only if the selected value is the same as the object being iterated -->
+            <td *ngIf="cartoon.DOB==selectedCartoon.DOB">{{cartoon.DOB}}</td><!-- Display the cell only if the selected value is the same as the object being iterated -->
+            <td *ngIf="cartoon.email==selectedCartoon.email">{{cartoon.email}}</td><!--Display the cell only if the selected value is the same as the object being iterated -->
+        </tr>
+    </tbody>
+    </table>
+</div>
+
+
+
+
